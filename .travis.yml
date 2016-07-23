@@ -1,20 +1,7 @@
 sudo: false
 language: python
 python:
-#  - "2.6"
   - "2.7"
-# - "3.2"
 
-env:
-  - MODE=flake8
-  - MODE=flake8-strict
-  - MODE=docs
-  - DJANGO_VERSION=dj17
-  - DJANGO_VERSION=dj18
-  - DJANGO_VERSION=dj19
-  - DJANGO_VERSION=djdev
-
-# command to install dependencies
-install: "pip install -r requirements.txt"
-# command to run tests
-script: make test
+install: pip install tox-travis
+script: tox
